@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bucket list</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Anek+Malayalam:wght@300&family=Bitter&family=Open+Sans:wght@300&display=swap"
+    rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"
+    defer></script>
+  <script src="js/main.js" defer type="module"></script>
+  <link rel="stylesheet" href="main.css">
+</head>
+
+<body>
+  <main>
+    <h1 class="mt-5 text-center">MY BUCKET LIST</h1>
+    <div>
+      <form class="js-add-todo-form add-todo-form mt-5 d-flex justify-content-center">
+       
+        <div class="mb-3 text-center">
+          <label for="inputArea" class="add-todo-form-input">Add a wish</label>
+          <input type="text" class="mb-3 form-control py-2" id="inputArea" name="title">
+          
+          <button type="submit" class="btn btn-primary">Add</button>
+          <div class=" mt-3"><small class="add-todo-form-error" field-error="title"></small></div>
+          
+          
+        </div>
+        
+        
+        
+      </form>
+    </div>
+    <div class="pb-2 pt-3 text-center">Thisngs I want to do (check if done)</div>
+
+
+
+
+
+    <div class="js-main-container main-container d-flex flex-column">
+
+
+
+      <div class="js-item-container item-container d-flex flex-nowrap justify-content-center mt-2 fade-in">
+        <div class="js-item item border border-white border-2 rounded my-auto py-2 d-flex">
+          <div class="js-checkbox checkbox mx-2"></div>
+          <div class="js-item-text item-text">fly</div>
+        </div>
+        <div class="js-buttons buttons d-inline-flex">
+          <button class="btn-delete btn btn-primary py-0 ms-2"></button>
+          <button class="btn-edit btn btn-primary ms-2"></button>
+        </div>
+      </div>
+
+
+
+    </div>
+
+
+
+
+
+    <div class="mt-5 text-center">My progress</div>
+    <div class="progress-container d-flex flex-nowrap justify-content-center my-5">
+      <div class="progress-item border border-white border-2 rounded my-auto py-2 d-flex">
+        <span>llll</span>
+      </div>
+    </div>
+  </main>
+</body>
+
+</html>
+
+
+
+
+
+
+<!-- <div class="buttons d-inline-flex">
+  <button class="btn-delete btn btn-primary py-0 ms-2"><img class="button-img" src="delete-button.png"/></button>
+  <button class="btn-edit btn btn-primary ms-2"><img class ="button-image" src="edit-pen.png"/></button>
+</div> -->

@@ -1,0 +1,118 @@
+body {
+    margin-left: 10%;
+    margin-right: 10%;
+    background:url("assets/sky1-2.jpg");
+    background-size: cover;
+    background-position:fixed;
+    background-repeat: no-repeat;
+    min-height: 100vh;   
+    color: #ffff;
+    font-family: 'Bitter', serif;
+}
+
+/* .main-container{
+    margin-left: 15%;
+    margin-right: 15%;
+
+} */
+
+.btn{
+    background-color:#01567b;
+    opacity: 0.7;
+    border: none;
+    border: solid #ffff 2px;
+    background-image: url("asset/edit-pen.png");
+}
+
+.btn:hover{
+    background-color: #01567b;
+}
+
+.btn-add{
+    background-color:#01567b;
+    opacity: 0.7;
+    border: none;
+    border: solid #ffff 2px;
+    background-image: url("edit-pen.png");
+
+}
+
+#inputArea {
+    width: 300px;
+    opacity: 0.7;
+}
+
+.item{
+    background-color: #01567b;
+    opacity: 0.7;
+    width: 70%;
+    display: flex;
+}
+
+.item-text {
+    text-overflow: ellipsis;
+  overflow: hidden; 
+ width: 100%;
+  white-space: nowrap;
+  
+}
+
+.item-container{
+    justify-content: space-between;
+    
+}
+
+.fade-in {
+	opacity: 1;
+	animation-name: fadeInOpacity;
+	animation-iteration-count: 1;
+	animation-timing-function: ease-in;
+	animation-duration: 1s;
+}
+
+@keyframes fadeInOpacity {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
+
+.progress-item{
+    background-color: #01567b;
+    opacity: 0.6;
+    width: 100%;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+.checkbox {
+    height: 22px;
+    width: 22px;
+    border: 2px solid #ffff;
+    cursor: pointer;
+    border-radius: 20%;
+  }
+  
+  .checkbox.checked {
+    background-color: #ffff;
+  }
+  
+  .checkbox.checked::before {
+    display: inline-block;
+    position: absolute;
+    content: '';
+    height: 14px;
+    width: 14px;
+    border: 3px solid #01567b;
+    border-top: none;
+    border-left: none;
+    transform: rotate(45deg);   
+  }
+
+  img{
+    height: 20px;
+    width:20px;
+  }
