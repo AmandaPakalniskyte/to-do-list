@@ -9,7 +9,8 @@ const displayTodoItem = ({
   id
 }) => {
   const todoItemField = document.createElement('div'); // <div></div>
-  todoItemField.className = '.js-item-container item-container d-flex flex-nowrap justify-content-center mt-2 fade-in'; // <div class="todo-list__item"></div>
+  todoItemField.className = '.js-item-container item-container d-flex flex-nowrap justify-content-center mt-2';
+  
 
   const todoItem = document.createElement('div'); 
   todoItem.className = '.js-item item border border-white border-2 rounded my-auto py-2 d-flex'; 

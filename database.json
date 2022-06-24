@@ -1,19 +1,9 @@
 {
   "todos": [
     {
-      "id": "1",
-      "title": "skritsi",
-      "completed": true
-    },
-    {
-      "id": "2",
-      "title": "skritsi",
-      "completed": true
-    },
-    {
-      "title": "gdgdh",
-      "completed": true,
-      "id": "hwqr0WU"
+      "title": "aaa",
+      "completed": false,
+      "id": 1
     }
   ]
 }
