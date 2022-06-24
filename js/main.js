@@ -1,8 +1,9 @@
 import FormComponent from "./components/form-component.js";
 import todoValidator from "./helpers/validators/todo-validator.js";
+import ApiService from "./helpers/api-service.js";
 
 const todoList = document.querySelector('.js-main-container');
-const addTodoItem = ({
+const displayTodoItem = ({
   completed = false,
   title
 }) => {
@@ -26,7 +27,7 @@ const addTodoItem = ({
 
   const btnDelete = document.createElement('button'); // <button></button>
   btnDelete.className = '.btn-delete btn btn-primary py-0 ms-2'; 
-  btnDelete.innerHTML = '<img class="button-img" src="delete-button.png"/>';
+  btnDelete.innerHTML = '<img class="button-img" src="assets/delete-button.png"/>';
   btnDelete.addEventListener('click', () => console.log('Paspausta delete'));
 
   const btnEdit = document.createElement('button'); // <button></button>
@@ -56,44 +57,27 @@ const addTodoItem = ({
 const formAddTodo = new FormComponent(
   '.js-add-todo-form', /* selector */
   todoValidator, /* formatErrors */
-  addTodoItem, /* onSuccess */
+  async ({ title }) => {
+    const createdTodo = await ApiService.createTodo({ title });
+    displayTodoItem(createdTodo);
+  }
 );
 
-// Siunčiame užklausą į nuotolinį serverį
-fetch('https://jsonplaceholder.typicode.com/todos?userId=7')
-  // Užklausos atsakymo JSON duomenis verčiame JavaScript masyvu
-  .then((response) => response.json())
-  // Su kiekvienu parsiųsto masyvo elementu, kuriame naują TodoItem'ą kviečiant funkciją addTodoItem
-  .then((items) => items.forEach(addTodoItem));
+// Pradinių duomenų parsiuntimas
+const todos = await ApiService.fetchTodos();
+todos.forEach(displayTodoItem);
+
+
+// fetch('https://localhost:1337/todos')
+// fetch('https://jsonplaceholder.typicode.com/todos?userId=7')
+  
+//   .then((response) => response.json())
+  
+//   .then((items) => items.forEach(addTodoItem));
 
 
 
 
 
   
-// const todoList = document.querySelector('.js-main-container');
-// const displayItems = (items) => items.forEach(({ completed, title }) => {
-//     todoList.innerHTML += `
-//     <div class="item-container d-flex flex-nowrap justify-content-center mt-2">
-//         <div class="item border border-white border-2 rounded my-auto py-2 d-flex">
-//             <div class="checkbox mx-2${completed ? ' checked' : ''}"></div>
-//             <div class="item-text">${title}</div>
-//         </div>
-//         <div class="buttons d-inline-flex">
-//         <button class="btn-delete btn btn-primary py-0 ms-2"><img class="button-img" src="delete-button.png"/></button>
-//         <button class="btn-edit btn btn-primary ms-2"><img class ="button-image" src="edit-pen.png"/></button>
-//         </div>
-//     </div>`;
-//   });
-
-
-
-// fetch('https://jsonplaceholder.typicode.com/todos?userId=7')
-//   .then(response => response.json())
-//   .then(displayItems);
-
-
-
-
-
 
