@@ -3,32 +3,17 @@
     {
       "id": "1",
       "title": "skritsi",
-      "completed": false
+      "completed": true
     },
     {
       "id": "2",
       "title": "skritsi",
-      "completed": false
+      "completed": true
     },
     {
       "title": "gdgdh",
-      "completed": false,
+      "completed": true,
       "id": "hwqr0WU"
-    },
-    {
-      "title": "terte",
-      "completed": false,
-      "id": "fmxskKh"
-    },
-    {
-      "title": "11111",
-      "completed": false,
-      "id": "Dbt1Xeh"
-    },
-    {
-      "title": "tytyrj",
-      "completed": false,
-      "id": "rA_S0qb"
     }
   ]
 }

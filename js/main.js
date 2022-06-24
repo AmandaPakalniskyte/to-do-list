@@ -17,7 +17,14 @@ const displayTodoItem = ({
   const checkbox = document.createElement('div');  // <div></div>
   checkbox.className = '.js-checkbox checkbox mx-2';  // <div class="checkbox"></div>
   if (completed) checkbox.classList.add('checked'); // <div class="checkbox checked"></div>
-  checkbox.addEventListener('click', () => console.log('Paspausta check'));
+  checkbox.addEventListener('click', async () => {
+    await ApiService.updateTodo({
+      id,
+      completed: !checkbox.classList.contains('checked')
+    });
+
+    checkbox.classList.toggle('checked');
+  });
 
   const todoItemText = document.createElement('div'); // <div></div>
   todoItemText.className = '.js-item-text item-text'; // <div class="todo-list__item__text"></div>
