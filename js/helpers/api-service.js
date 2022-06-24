@@ -30,9 +30,14 @@ const fetchTodos = async () => {
     return reponseData;
   };
   
+  const deleteTodo = async (id) => {
+    await fetch(`http://localhost:1337/todos/${id}`, { method: 'DELETE' });
+  };
+  
   const ApiService = {
     fetchTodos,
     createTodo,
+    deleteTodo,
   };
   
   export default ApiService;

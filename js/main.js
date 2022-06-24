@@ -4,8 +4,9 @@ import ApiService from "./helpers/api-service.js";
 
 const todoList = document.querySelector('.js-main-container');
 const displayTodoItem = ({
-  completed = false,
-  title
+  completed,
+  title,
+  id
 }) => {
   const todoItemField = document.createElement('div'); // <div></div>
   todoItemField.className = '.js-item-container item-container d-flex flex-nowrap justify-content-center mt-2 fade-in'; // <div class="todo-list__item"></div>
@@ -28,12 +29,15 @@ const displayTodoItem = ({
   const btnDelete = document.createElement('button'); // <button></button>
   btnDelete.className = '.btn-delete btn btn-primary py-0 ms-2'; 
   btnDelete.innerHTML = '<img class="button-img" src="assets/delete-button.png"/>';
-  btnDelete.addEventListener('click', () => console.log('Paspausta delete'));
+  btnDelete.addEventListener('click',  async () => {
+    await ApiService.deleteTodo(id);
+    todoItem.remove();
+  });
 
   const btnEdit = document.createElement('button'); // <button></button>
   btnEdit.className = '.btn-edit btn btn-primary ms-2';
   btnEdit.innerHTML = '<img class ="button-image" src="assets/edit-pen.png"/>';
-  btnEdit.addEventListener('click', () => console.log('Paspausta edit'));
+  btnEdit.addEventListener('click', console.log("Paspausta edit"));
               
   todoItemField.append(  
     todoItem,       
