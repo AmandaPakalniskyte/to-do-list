@@ -1,122 +1,113 @@
 body {
-    margin-left: 10%;
-    margin-right: 10%;
-    background:url("assets/sky1-2.jpg");
-    background-size: cover;
-    background-position:fixed;
-    background-repeat: no-repeat;
-    min-height: 100vh;   
-    color: #ffff;
-    font-family: 'Bitter', serif;
+  margin-left: 10%;
+  margin-right: 10%;
+  background: url("assets/sky1-2.jpg");
+  background-size: cover;
+  background-position: fixed;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  color: #ffff;
+  font-family: 'Bitter', serif;
 }
 
-/* .main-container{
-    margin-left: 15%;
-    margin-right: 15%;
-
-} */
-
-.btn{
-    background-color:#01567b;
-    opacity: 0.7;
-    border: none;
-    border: solid #ffff 2px;
-    
+.btn {
+  background-color: #01567b;
+  border: none;
+  border: solid #ffff 2px;
+  z-index: 22;
+  height: 30px;
+  width: 30px;
+  padding: 0;
 }
 
-.btn:hover{
-    background-color: #01567b;
+.btn:hover {
+  background-color: #01567b;
+  border: 2px solid #ffff;
 }
 
-.btn-add{
-    background-color:#01567b;
-    opacity: 0.7;
-    border: none;
-    border: solid #ffff 2px;
-    background-image: url("edit-pen.png");
-
+.btn-add {
+  background-color: #01567b;
+  opacity: 0.7;
+  border: solid #ffff 2px;
+  text-align: center;
+  color: #ffff;
+  position: relative;
+  width: 100px;
+  height: 41px;
 }
 
 #inputArea {
-    width: 300px;
-    opacity: 0.7;
+  width: 300px;
+  opacity: 0.7;
 }
 
-.item{
-    background-color: #01567b;
-    opacity: 0.7;
-    width: 70%;
-    display: flex;
+.item {
+  background-color: #01567b;
+  opacity: 0.7;
+  width: 70%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .item-text {
-    text-overflow: ellipsis;
-  overflow: hidden; 
- width: 100%;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  width: 100%;
   white-space: nowrap;
-  
+  vertical-align: middle;
 }
 
-.item-container{
-    justify-content: space-between;
-    
+.item-container {
+  justify-content: space-between;
 }
 
-/* .fade-in {
-	opacity: 1;
-	animation-name: fadeInOpacity;
-	animation-iteration-count: 1;
-	animation-timing-function: ease-in;
-	animation-duration: 1s;
-}
-
-@keyframes fadeInOpacity {
-	0% {
-		opacity: 0;
-	}
-	100% {
-		opacity: 1;
-	}
-} */
-
-
-.progress-item{
-    background-color: #01567b;
-    opacity: 0.6;
-    width: 80%;
-    /* margin-left: 10%;
-    margin-right: 10%; */
+.progress-item {
+  background-color: #01567b;
+  opacity: 0.6;
+  width: 70%;
+  height: 50px;
 }
 
 .checkbox {
-    height: 22px;
-    width: 22px;
-    border: 2px solid #ffff;
-    cursor: pointer;
-    border-radius: 20%;
-  }
-  
-  .checkbox.checked {
-    background-color: #ffff;
-  }
-  
-  .checkbox.checked::before {
-    display: inline-block;
-    position: absolute;
-    content: '';
-    height: 14px;
-    width: 14px;
-    border: 3px solid #01567b;
-    border-top: none;
-    border-left: none;
-    transform: rotate(45deg);   
-  }
+  height: 25px;
+  width: 27px;
+  border: 2px solid #ffff;
+  cursor: pointer;
+  border-radius: 20%;
+  padding: 0;
+}
 
-  img{
-    height: 20px;
-    width:20px;
-  }
+.checkbox.checked {
+  background-color: #ffff;
+  padding-bottom: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
-  .text-shadow{
-    text-shadow: 1px 1px 0px #01567b;
-  }
+.checkbox.checked::before {
+  display: inline-block;
+  position: relative;
+  content: '';
+  height: 14px;
+  width: 14px;
+  border: 3px solid #01567b;
+  border-top: none;
+  border-left: none;
+  transform: rotate(45deg);
+}
+
+img {
+  height: 15px;
+  width: 15px;
+}
+
+img:hover {
+  height: 18px;
+  width: 18px;
+}
+
+.text-shadow {
+  text-shadow: 1px 1px 0px #01567b;
+}

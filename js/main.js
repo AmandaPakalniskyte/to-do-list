@@ -8,88 +8,75 @@ const displayTodoItem = ({
   title,
   id
 }) => {
-  const todoItemField = document.createElement('div'); // <div></div>
+  const todoItemField = document.createElement('div'); 
   todoItemField.className = '.js-item-container item-container d-flex flex-nowrap justify-content-center mt-2';
-  
 
-  const todoItem = document.createElement('div'); 
-  todoItem.className = '.js-item item border border-white border-2 rounded my-auto py-2 d-flex'; 
+  const todoItem = document.createElement('div');
+  todoItem.className = '.js-item item border border-white border-2 rounded my-auto py-2 d-flex';
 
-  const checkbox = document.createElement('div');  // <div></div>
-  checkbox.className = '.js-checkbox checkbox mx-2';  // <div class="checkbox"></div>
-  if (completed) checkbox.classList.add('checked'); // <div class="checkbox checked"></div>
+  const checkbox = document.createElement('div');  
+  checkbox.className = '.js-checkbox checkbox mx-2';  
+  if (completed) checkbox.classList.add('checked'); 
   checkbox.addEventListener('click', async () => {
     await ApiService.updateTodo({
       id,
       completed: !checkbox.classList.contains('checked')
     });
-
     checkbox.classList.toggle('checked');
   });
 
-  const todoItemText = document.createElement('div'); // <div></div>
-  todoItemText.className = '.js-item-text item-text'; // <div class="todo-list__item__text"></div>
-  todoItemText.innerText = title; // <div class="todo-list__item__text">{{ title }}</div>
+  const todoItemText = document.createElement('div');
+  todoItemText.className = '.js-item-text item-text'; 
+  todoItemText.innerText = title; 
 
-  const buttonsDeleteAndEdit = document.createElement('div'); // <div></div>
-  buttonsDeleteAndEdit.className = '.js-buttons buttons d-inline-flex'; // <div class="todo-list__item"></div>
+  const buttonsDeleteAndEdit = document.createElement('div'); 
+  buttonsDeleteAndEdit.className = '.js-buttons buttons d-inline-flex'; 
 
-  const btnDelete = document.createElement('button'); // <button></button>
-  btnDelete.className = '.btn-delete btn btn-primary py-0 ms-2'; 
+  const btnDelete = document.createElement('button'); 
+  btnDelete.className = '.btn-delete btn btn-primary mx-2';
   btnDelete.innerHTML = '<img class="button-img" src="assets/delete-button.png"/>';
-  btnDelete.addEventListener('click',  async () => {
+  btnDelete.addEventListener('click', async () => {
     await ApiService.deleteTodo(id);
     todoItem.remove();
   });
 
-  const btnEdit = document.createElement('button'); // <button></button>
-  btnEdit.className = '.btn-edit btn btn-primary ms-2';
-  btnEdit.innerHTML = '<img class ="button-image" src="assets/edit-pen.png"/>';
-  btnEdit.addEventListener('click', console.log("Paspausta edit"));
-              
-  todoItemField.append(  
-    todoItem,       
-    buttonsDeleteAndEdit,   
-  ); 
+  // const btnEdit = document.createElement('button');
+  // btnEdit.className = '.btn-edit btn btn-primary ms-2';
+  // btnEdit.innerHTML = '<img class ="button-image" src="assets/edit-pen.png"/>';
+  // btnEdit.addEventListener('click', console.log("Paspausta edit"));
 
-  todoItem.append(
-    checkbox,
-    todoItemText,
+
+  todoItemField.append(
+    todoItem,  
   );
 
   buttonsDeleteAndEdit.append(
     btnDelete,
-    btnEdit,
+
+  );
+  todoItem.append(
+    checkbox,
+    todoItemText,
+    buttonsDeleteAndEdit
   );
 
   todoList.insertAdjacentElement('afterBegin', todoItemField);
 }
 
-// Kuriame Formos komponentą, kuris konstravimo metu paruošia validavimo procesą
 const formAddTodo = new FormComponent(
-  '.js-add-todo-form', /* selector */
-  todoValidator, /* formatErrors */
+  '.js-add-todo-form',
+  todoValidator,
   async ({ title }) => {
     const createdTodo = await ApiService.createTodo({ title });
     displayTodoItem(createdTodo);
   }
 );
 
-// Pradinių duomenų parsiuntimas
 const todos = await ApiService.fetchTodos();
 todos.forEach(displayTodoItem);
 
 
-// fetch('https://localhost:1337/todos')
-// fetch('https://jsonplaceholder.typicode.com/todos?userId=7')
-  
-//   .then((response) => response.json())
-  
-//   .then((items) => items.forEach(addTodoItem));
 
 
 
-
-
-  
-
+console.log(todoList.children.length)

@@ -113,7 +113,6 @@ class FormComponent {
           field.classList.add('is-invalid');
         }
       }
-
       if (errorHtmlElement) {
         errorHtmlElement.innerHTML = error;
       }
