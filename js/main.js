@@ -92,3 +92,4 @@ console.log(allInputsInProgressFieldArr);
 for (let i = 0; i < numberOfCheckedItems; i++) {
   allInputsInProgressFieldArr[i].classList.add("completed");
 };
+
