@@ -1,9 +1,9 @@
 class FormComponent {
-  #htmlElement;       // HTMLFormElement
-  #fields;            // {} - įvesties laukų HTML elementų objektas pagal 'name' atributus
-  #errorHtmlElements; // {} - klaidų HTML elementų objektas pagal 'name' atributus
-  #formatErrors;      // Function - funkcija kuri priima #values ir grąžina #errors tipo obejktą 
-  #onSuccess;         // Function - funkcija kuri kviečiama pasubmit'inus formą su teisingais duomenimis
+  #htmlElement;       
+  #fields;            
+  #errorHtmlElements; 
+  #formatErrors;      
+  #onSuccess;         
 
   constructor(selector, formatErrors, onSuccess) {
     const htmlElement = document.querySelector(selector);
