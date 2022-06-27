@@ -10,6 +10,10 @@ body {
   font-family: 'Bitter', serif;
 }
 
+.text-shadow {
+  text-shadow: 1px 1px 0px #01567b;
+}
+
 .btn {
   background-color: #01567b;
   border: none;
@@ -58,26 +62,6 @@ body {
   vertical-align: middle;
 }
 
-.item-container {
-  justify-content: space-between;
-}
-
-.progress-container{
-  width: 70%;
-  
-  margin-left: auto;
-  margin-right: auto;
-  
-}
-
-.progress-item {
-  background-color: #01567b;
-  opacity: 0.6;
-  width: 70%;
-  height: 50px;
-  flex-grow: 1;
-}
-
 .checkbox {
   height: 25px;
   width: 27px;
@@ -113,20 +97,31 @@ img {
 }
 
 img:hover {
-  height: 18px;
-  width: 18px;
+  height: 19px;
+  width: 19px;
 }
 
-.text-shadow {
-  text-shadow: 1px 1px 0px #01567b;
+.progress-container {
+  width: 70%;
+
+  margin-left: auto;
+  margin-right: auto;
+
 }
 
-.progress-item div{
-  width:100%;
-  height: 100%;
-  border: 2px solid black;
-}
-
-.completed{
+.progress-field {
   background-color: #ffff;
+  opacity: 0.6;
+  width: 70%;
+  height: 47px;
+  flex-grow: 1;
+}
+
+.progress-field div {
+  width: 100%;
+  height: 100%;
+}
+
+.completed {
+  background-color: #01567b;
 }
