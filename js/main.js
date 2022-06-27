@@ -78,5 +78,58 @@ todos.forEach(displayTodoItem);
 
 
 
+const numberOfInputs = todoList.children.length;
+console.log(numberOfInputs);
 
-console.log(todoList.children.length)
+// if(numberOfInputs > 0){
+//   const progressElement = document.createElement('div');
+
+// }
+const progressItem = document.querySelector('.js-progress-item');
+console.log(progressItem); 
+
+const arrayDiv = new Array();
+console.log(arrayDiv);
+for (let i = 0; i < numberOfInputs; i++) {
+    arrayDiv[i] = document.createElement('div');
+    progressItem.appendChild(arrayDiv[i]);
+      
+};
+
+// const item = document.querySelector('.js-progress-item > div');
+// item.classList.add("completed");
+// console.log(item);
+
+const numberOfCheckedItems = document.querySelectorAll(".checked").length;
+console.log(numberOfCheckedItems);
+
+
+// for (let i = 0; i < numberOfCheckedItems; i++) {
+//   const item = document.querySelector('.js-progress-item > div');
+//   console.log(item);
+//   item.classList.add("completed");
+      
+// };
+
+const items = document.querySelectorAll('.js-progress-item > div');
+console.log(items);
+const divsArr = Array.from(items);
+console.log(divsArr);
+for (let i = 0; i < numberOfCheckedItems; i++) {
+  divsArr[i].classList.add("completed");
+
+;  
+
+
+
+      
+};
+
+
+
+
+ 
+
+
+
+
